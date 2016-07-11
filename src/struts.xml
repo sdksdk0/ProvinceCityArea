@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	
+
+	
+	<package name="mypackage" extends="json-default" namespace="/"> 
+	
+		
+		<!-- 全局结果 -->
+		<global-results>
+			<result name="success" type="json"/>
+		</global-results>
+	
+	
+		<!-- 根据省份查询城市 -->
+		<action 
+			name="findCityRequest" 
+			class="cn.tf.Action.ProvinceCityAreaAction" 
+			method="findCityByProvince">
+		</action>
+		
+		
+		<!-- 根据城市查询区域 -->
+		<action 
+			name="findAreaRequest" 
+			class="cn.tf.Action.ProvinceCityAreaAction" 
+			method="findAreaByCity">
+		</action>
+		
+		
+	</package>
+	
+</struts>
